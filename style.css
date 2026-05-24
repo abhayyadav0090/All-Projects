@@ -21,7 +21,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  overflow: auto; /* allow horizontal scroll if needed */
+  overflow-x: auto; /* allow horizontal scroll if needed */
 }
 
 header h1 {
