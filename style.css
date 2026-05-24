@@ -21,6 +21,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  overflow: auto; /* allow horizontal scroll if needed */
 }
 
 header h1 {
@@ -32,7 +33,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 0.5rem;
-  overflow-x: auto; /* scroll if too many links */
+  /* overflow-x: auto; scroll if too many links */
   white-space: nowrap;
 }
 
