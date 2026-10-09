@@ -2,70 +2,185 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abhay Yadav | Projects</title>
+  <meta name="description" content="Web apps and practice projects by Abhay Yadav, with live previews.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Fixed Header -->
-  <header>
-    <h1>Abhay Yadav’s Projects</h1>
-    <nav>
-      <ul>
-        <li><a href="#" data-project="project1">Portfolio</a></li>
-        <li><a href="#" data-project="project2">Simple Portfolio</a></li>
-        <li><a href="#" data-project="project3">Daily Routine</a></li>
-        <li><a href="#" data-project="project4">Nutri-Flex</a></li>
-        <li><a href="#" data-project="project5">MERN Practice</a></li>
-        <li><a href="#" data-project="project6">NexOS</a></li>
-        <li><a href="#" data-project="project7">Aurora</a></li>
-        <li><a href="#" data-project="project8">AmulSpray</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="page">
 
-  <!-- Project Sections -->
-  <main>
-    <section id="project1" class="project">
-      <h2>Portfolio Website</h2>
-      <iframe src="https://abhayyadav0090.github.io/portfolio/"></iframe>
-    </section>
+  <!-- Left side: who I am + jump list. Stays in view on wide screens. -->
+  <aside class="side">
+    <div class="side-inner">
+      <h1>Abhay Yadav</h1>
+      <p class="intro">B.Tech IT student building full-stack web apps with the MERN stack. Every preview here is a live site.</p>
 
-    <section id="project2" class="project">
-      <h2>Simple Portfolio Website</h2>
-      <iframe src="https://abhayyadav0090.github.io/portfolio2/"></iframe>
-    </section>
+      <nav class="index" aria-label="Projects">
+        <ul>
+          <li><a href="#jan-samadhan">Jan Samadhan</a></li>
+          <li><a href="#nexos">NexOS</a></li>
+          <li><a href="#mern-practice">MERN Practice</a></li>
+          <li><a href="#simple-portfolio">Simple Portfolio</a></li>
+          <li><a href="#daily-routine">Daily Routine</a></li>
+          <li><a href="#nutri-flex">Nutri-Flex</a></li>
+          <li><a href="#aurora">Aurora</a></li>
+          <li><a href="#amulspray">AmulSpray</a></li>
+        </ul>
+      </nav>
 
-    <section id="project3" class="project">
-      <h2>Daily Routine Webpage</h2>
-      <iframe src="https://abhayyadav0090.github.io/daily-routine-webpage/"></iframe>
-    </section>
+      <p class="elsewhere">
+        <a href="https://github.com/abhayyadav0090" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener">Portfolio</a>
+        <a href="https://www.linkedin.com/in/abhay-yadav-6923742b5/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </aside>
 
-    <section id="project4" class="project">
-      <h2>Nutri-Flex</h2>
-      <iframe src="https://abhayyadav0090.github.io/Nutri-Flex/"></iframe>
-    </section>
+  <!-- Right side: the projects -->
+  <main class="projects">
 
-    <section id="project5" class="project">
-      <h2>MERN Practice</h2>
-      <iframe src="https://abhayyadav0090.github.io/MERN-Practice"></iframe>
-    </section>
+    <!-- Jan Samadhan (main project, shown wide; preview is a screenshot) -->
+    <article class="project featured" id="jan-samadhan">
+      <a class="preview" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener" aria-label="Open Jan Samadhan">
+        <span class="address">jana-samadhan.vercel.app</span>
+        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/janasamajdhan.png" alt="Jan Samadhan preview" loading="lazy"></span>
+      </a>
+      <div class="info">
+        <h2>Jan Samadhan</h2>
+        <p>A community platform where citizens report local issues, with AI assistance using the Gemini API. Built for Smart India Hackathon 2026.</p>
+        <p class="stack">React, Node.js, Express, MongoDB, Tailwind CSS</p>
+        <div class="links">
+          <a class="open" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener">Open live</a>
+        </div>
+      </div>
+    </article>
 
-    <section id="project6" class="project"></section>
-      <h2>NexOS</h2>
-      <a href="https://ai-aqit.onrender.com/" target="_blank">Visit NexOS</a>
-    </section>
+    <!-- Simple Portfolio (screenshot) -->
+    <article class="project" id="simple-portfolio">
+      <a class="preview" href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener" aria-label="Open Simple Portfolio">
+        <span class="address">abhayyadav0090.github.io/portfolio2</span>
+        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/portfolio2.png" alt="Simple Portfolio preview" loading="lazy"></span>
+      </a>
+      <div class="info">
+        <h2>Simple Portfolio</h2>
+        <p>A clean personal portfolio with my skills, education and featured projects.</p>
+        <p class="stack">HTML, CSS</p>
+        <div class="links">
+          <a class="open" href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener">Open live</a>
+          <a href="https://github.com/abhayyadav0090/portfolio2" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
 
-    <section id="project7" class="project">
-      <h2>Aurora</h2>
-      <iframe src="https://abhayyadav0090.github.io/Aurora/"></iframe>
-    </section>
+    <!-- MERN Practice (screenshot) -->
+    <article class="project" id="mern-practice">
+      <a class="preview" href="https://abhayyadav0090.github.io/MERN-Practice/" target="_blank" rel="noopener" aria-label="Open MERN Practice">
+        <span class="address">abhayyadav0090.github.io/MERN-Practice</span>
+        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/mern.png" alt="MERN Practice preview" loading="lazy"></span>
+      </a>
+      <div class="info">
+        <h2>MERN Practice</h2>
+        <p>Class exercises, daily learnings and deployments from my MERN stack course.</p>
+        <p class="stack">HTML, CSS, JavaScript</p>
+        <div class="links">
+          <a class="open" href="https://abhayyadav0090.github.io/MERN-Practice/" target="_blank" rel="noopener">Open live</a>
+          <a href="https://github.com/abhayyadav0090/MERN-Practice" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
 
-    <section id="project8" class="project">
-      <h2>AmulSpray</h2>
-      <iframe src="https://abhayyadav0090.github.io/AmulSpray/"></iframe>
-    </section>
+    <!-- NexOS (screenshot) -->
+    <article class="project" id="nexos">
+      <a class="preview" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener" aria-label="Open NexOS">
+        <span class="address">ai-aqit.onrender.com</span>
+        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/productivity-website.png" alt="NexOS preview" loading="lazy"></span>
+      </a>
+      <div class="info">
+        <h2>NexOS</h2>
+        <p>Productivity web app with task management, calendar, focus timer, habit tracker and notes.</p>
+        <p class="stack">HTML, CSS, JavaScript</p>
+        <div class="links">
+          <a class="open" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener">Open live</a>
+          <a href="https://github.com/abhayyadav0090/AI" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Daily Routine (live site, scaled down) -->
+    <article class="project" id="daily-routine">
+      <a class="preview" href="https://abhayyadav0090.github.io/daily-routine-webpage/" target="_blank" rel="noopener" aria-label="Open Daily Routine Webpage">
+        <span class="address">abhayyadav0090.github.io/daily-routine-webpage</span>
+        <span class="screen"><iframe src="https://abhayyadav0090.github.io/daily-routine-webpage/" title="Daily Routine Webpage preview" loading="lazy" tabindex="-1"></iframe></span>
+      </a>
+      <div class="info">
+        <h2>Daily Routine Webpage</h2>
+        <p>A timeline-style daily schedule with colour-coded time blocks, built during the LetsUpgrade bootcamp.</p>
+        <p class="stack">HTML, CSS</p>
+        <div class="links">
+          <a class="open" href="https://abhayyadav0090.github.io/daily-routine-webpage/" target="_blank" rel="noopener">Open live</a>
+          <a href="https://github.com/abhayyadav0090/daily-routine-webpage" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Nutri-Flex (live site, scaled down) -->
+    <article class="project" id="nutri-flex">
+      <a class="preview" href="https://abhayyadav0090.github.io/Nutri-Flex/" target="_blank" rel="noopener" aria-label="Open Nutri-Flex">
+        <span class="address">abhayyadav0090.github.io/Nutri-Flex</span>
+        <span class="screen"><iframe src="https://abhayyadav0090.github.io/Nutri-Flex/" title="Nutri-Flex preview" loading="lazy" tabindex="-1"></iframe></span>
+      </a>
+      <div class="info">
+        <h2>Nutri-Flex</h2>
+        <p>A mobile-friendly nutrition website that presents health and food information clearly.</p>
+        <p class="stack">HTML, CSS</p>
+        <div class="links">
+          <a class="open" href="https://abhayyadav0090.github.io/Nutri-Flex/" target="_blank" rel="noopener">Open live</a>
+          <a href="https://github.com/abhayyadav0090/Nutri-Flex" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Aurora (live site, scaled down) -->
+    <article class="project" id="aurora">
+      <a class="preview" href="https://abhayyadav0090.github.io/Aurora/" target="_blank" rel="noopener" aria-label="Open Aurora">
+        <span class="address">abhayyadav0090.github.io/Aurora</span>
+        <span class="screen"><iframe src="https://abhayyadav0090.github.io/Aurora/" title="Aurora preview" loading="lazy" tabindex="-1"></iframe></span>
+      </a>
+      <div class="info">
+        <h2>Aurora</h2>
+        <!-- TODO: replace this line with what Aurora actually is -->
+        <p>A front-end web project.</p>
+        <p class="stack">HTML, CSS</p>
+        <div class="links">
+          <a class="open" href="https://abhayyadav0090.github.io/Aurora/" target="_blank" rel="noopener">Open live</a>
+          <a href="https://github.com/abhayyadav0090/Aurora" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- AmulSpray (live site, scaled down) -->
+    <article class="project" id="amulspray">
+      <a class="preview" href="https://abhayyadav0090.github.io/AmulSpray/" target="_blank" rel="noopener" aria-label="Open AmulSpray">
+        <span class="address">abhayyadav0090.github.io/AmulSpray</span>
+        <span class="screen"><iframe src="https://abhayyadav0090.github.io/AmulSpray/" title="AmulSpray preview" loading="lazy" tabindex="-1"></iframe></span>
+      </a>
+      <div class="info">
+        <h2>AmulSpray</h2>
+        <p>A product-focused webpage with a clean layout and well-structured content.</p>
+        <p class="stack">HTML, CSS</p>
+        <div class="links">
+          <a class="open" href="https://abhayyadav0090.github.io/AmulSpray/" target="_blank" rel="noopener">Open live</a>
+          <a href="https://github.com/abhayyadav0090/AmulSpray" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
 
   </main>
+</div>
 </body>
 </html>
