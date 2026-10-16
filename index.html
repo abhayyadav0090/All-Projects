@@ -49,7 +49,7 @@
             <span class="metric-key">Active Builds</span>
           </div>
           <div class="metric">
-            <span class="metric-val">4</span>
+            <span class="metric-val">6</span>
             <span class="metric-key">Live Sandboxes</span>
           </div>
           <div class="metric">
@@ -99,7 +99,7 @@
             Frontend UI <span class="badge-count">5</span>
           </button>
           <button type="button" class="filter-btn" data-filter="sandbox" role="tab" aria-selected="false">
-            Live Iframe <span class="badge-count">4</span>
+            Live Iframe <span class="badge-count">6</span>
           </button>
         </div>
 
@@ -130,7 +130,7 @@
         <article
           class="project featured"
           id="jan-samadhan"
-          data-category="fullstack"
+          data-category="fullstack sandbox"
           data-tags="react node.js express mongodb tailwind css gemini ai sih fullstack">
           <div class="preview">
             <div class="browser-bar">
@@ -140,17 +140,22 @@
               <span class="address" title="https://jana-samadhan.vercel.app/">jana-samadhan.vercel.app</span>
               <div class="bar-actions">
                 <span class="mode-badge badge-featured">SIH 2026 &bull; AI</span>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">
+                  Interact
+                </button>
                 <button type="button" class="bar-btn copy-url" data-url="https://jana-samadhan.vercel.app/" title="Copy live URL">
                   Copy URL
                 </button>
               </div>
             </div>
-            <a class="screen" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener" aria-label="Open Jan Samadhan live deployment">
-              <img
-                src="https://abhayyadav0090.github.io/portfolio2/PNGs/janasamajdhan.png"
-                alt="Jan Samadhan civic issue reporting dashboard"
-                fetchpriority="high">
-            </a>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe
+                src="https://jana-samadhan.vercel.app/"
+                title="Jan Samadhan live preview"
+                loading="lazy"
+                tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener" aria-label="Open Jan Samadhan in new tab"></a>
+            </div>
           </div>
 
           <div class="info">
@@ -253,25 +258,32 @@
         <article
           class="project"
           id="nexos"
-          data-category="fullstack"
+          data-category="fullstack sandbox"
           data-tags="html css javascript productivity state">
           <div class="preview">
             <div class="browser-bar">
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <span class="address">ai-aqit.onrender.com</span>
               <div class="bar-actions">
-                <span class="mode-badge">Snapshot</span>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">
+                  Interact
+                </button>
                 <button type="button" class="bar-btn copy-url" data-url="https://ai-aqit.onrender.com/">Copy</button>
               </div>
             </div>
-            <a class="screen" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener" aria-label="Open NexOS">
-              <img src="https://abhayyadav0090.github.io/portfolio2/PNGs/productivity-website.png" alt="NexOS workspace preview" loading="lazy">
-            </a>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe
+                src="https://ai-aqit.onrender.com/"
+                title="NexOS live preview"
+                loading="lazy"
+                tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener" aria-label="Open NexOS in new tab"></a>
+            </div>
           </div>
           <div class="info">
             <div class="info-head">
               <h2>NexOS</h2>
-              <span class="project-index">04</span>
+              <span class="project-index">04 / LIVE</span>
             </div>
             <p>All-in-one browser workspace integrating task queues, calendar scheduling, Pomodoro focus timers, habit tracking, and persistent notes.</p>
             <ul class="stack-list" aria-label="Technologies used">
