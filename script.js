@@ -1,7 +1,52 @@
 (() => {
   const DESKTOP_WIDTH = 1280;
+  const LOAD_TIMEOUT_MS = 12000;
 
-  // 1. Single Shared ResizeObserver (Avoids synchronous clientWidth layout thrashing)
+  // ---------- Shared elements ----------
+  const toast = document.getElementById("toast");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const searchInput = document.getElementById("project-search");
+  const clearBtn = document.getElementById("clear-filter");
+  const emptyState = document.getElementById("empty-state");
+  const emptyReset = document.getElementById("empty-reset");
+  const visibleCountEl = document.getElementById("visible-count");
+  const projects = [...document.querySelectorAll(".project")];
+  const navLinks = [...document.querySelectorAll(".index a")];
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("theme-toggle");
+
+  let activeCategory = "all";
+  let toastTimer = null;
+
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.hidden = true;
+    }, 2200);
+  };
+
+  // Safe storage (can throw in private mode or when blocked)
+  const storage = {
+    get(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch {
+        return null;
+      }
+    },
+    set(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch {
+        /* ignore */
+      }
+    },
+  };
+
+  // ---------- 1. Iframe scaling + loading state ----------
   const iframeScreens = document.querySelectorAll(".screen");
   const scaleObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
@@ -19,82 +64,87 @@
 
     scaleObserver.observe(screen);
 
-    // Clear loading shimmer when iframe finishes loading
-    frame.addEventListener("load", () => {
-      screen.classList.remove("is-loading");
-    });
+    const stopLoading = () => screen.classList.remove("is-loading");
+    frame.addEventListener("load", stopLoading);
+    // Never leave the shimmer on forever (slow Render cold start, blocked frame)
+    setTimeout(stopLoading, LOAD_TIMEOUT_MS);
   });
 
-  // 2. Interactive Sandbox Toggle & Copy URL Controls
-  const toast = document.getElementById("toast");
-  let toastTimer = null;
+  // ---------- 2. Interactive toggle, copy URL, stack tags ----------
+  const setInteractive = (screen, button, on) => {
+    screen.setAttribute("data-interactive", String(on));
+    if (button) {
+      button.setAttribute("aria-pressed", String(on));
+      button.textContent = on ? "Lock" : "Interact";
+    }
+  };
 
-  const showToast = (message) => {
-    if (!toast) return;
-    toast.textContent = message;
-    toast.hidden = false;
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => {
-      toast.hidden = true;
-    }, 2200);
+  const lockAllFrames = () => {
+    document.querySelectorAll(".screen[data-interactive='true']").forEach((screen) => {
+      const btn = screen.closest(".preview")?.querySelector(".interact-toggle");
+      setInteractive(screen, btn, false);
+    });
+  };
+
+  const copyText = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      // Fallback for browsers or contexts that block the clipboard API
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      } catch {
+        return false;
+      }
+    }
   };
 
   document.addEventListener("click", async (e) => {
-    // Handle Interactive Iframe Toggle
+    // Interactive iframe toggle
     const interactBtn = e.target.closest(".interact-toggle");
     if (interactBtn) {
-      const preview = interactBtn.closest(".preview");
-      const screen = preview?.querySelector(".screen");
+      const screen = interactBtn.closest(".preview")?.querySelector(".screen");
       if (!screen) return;
 
-      const isInteractive = screen.getAttribute("data-interactive") === "true";
-      const nextState = !isInteractive;
-      screen.setAttribute("data-interactive", String(nextState));
-      interactBtn.setAttribute("aria-pressed", String(nextState));
-      interactBtn.textContent = nextState ? "Lock" : "Interact";
-      showToast(nextState ? "Interactive sandbox unlocked" : "Sandbox locked for scrolling");
+      const turnOn = screen.getAttribute("data-interactive") !== "true";
+      if (turnOn) lockAllFrames(); // only one frame unlocked at a time
+      setInteractive(screen, interactBtn, turnOn);
+      showToast(turnOn ? "Interactive sandbox unlocked" : "Sandbox locked for scrolling");
       return;
     }
 
-    // Handle Copy Live URL Button
+    // Copy live URL
     const copyBtn = e.target.closest(".copy-url");
     if (copyBtn) {
       const url = copyBtn.getAttribute("data-url");
       if (!url) return;
-      try {
-        await navigator.clipboard.writeText(url);
-        showToast(`Copied: ${url}`);
-      } catch {
-        showToast("Unable to copy URL");
-      }
+      const ok = await copyText(url);
+      showToast(ok ? `Copied: ${url}` : "Unable to copy URL");
       return;
     }
 
-    // Handle Clickable Stack Tag Filtering
+    // Stack tag filtering
     const stackTag = e.target.closest(".stack-tag");
-    if (stackTag) {
+    if (stackTag && searchInput) {
       const tech = stackTag.getAttribute("data-tech") || "";
-      if (searchInput) {
-        searchInput.value = tech;
-        applyFilters();
-        showToast(`Filtered by stack: ${tech}`);
-      }
+      searchInput.value = tech;
+      applyFilters();
+      showToast(`Filtered by stack: ${tech}`);
     }
   });
 
-  // 3. Category Filtering & Instant Search
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const searchInput = document.getElementById("project-search");
-  const clearBtn = document.getElementById("clear-filter");
-  const emptyState = document.getElementById("empty-state");
-  const emptyReset = document.getElementById("empty-reset");
-  const visibleCountEl = document.getElementById("visible-count");
-  const projects = [...document.querySelectorAll(".project")];
-  const navLinks = [...document.querySelectorAll(".index a")];
-
-  let activeCategory = "all";
-
-  const applyFilters = () => {
+  // ---------- 3. Category filter + search ----------
+  function applyFilters() {
     const query = (searchInput?.value || "").trim().toLowerCase();
     let visibleCount = 0;
 
@@ -111,17 +161,14 @@
       project.hidden = !isVisible;
       if (isVisible) visibleCount++;
 
-      // Dim hidden items in the sidebar directory
       const matchingLink = navLinks.find((l) => l.getAttribute("data-target") === project.id);
-      if (matchingLink) {
-        matchingLink.parentElement.hidden = !isVisible;
-      }
+      if (matchingLink) matchingLink.parentElement.hidden = !isVisible;
     });
 
     if (visibleCountEl) visibleCountEl.textContent = String(visibleCount);
     if (emptyState) emptyState.hidden = visibleCount > 0;
     if (clearBtn) clearBtn.hidden = activeCategory === "all" && !query;
-  };
+  }
 
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -152,7 +199,7 @@
   clearBtn?.addEventListener("click", resetAllFilters);
   emptyReset?.addEventListener("click", resetAllFilters);
 
-  // 4. Multi-Column & Bottom-Aware Scroll-Spy
+  // ---------- 4. Scroll-spy ----------
   const setActiveNav = (id) => {
     navLinks.forEach((link) => {
       const isMatch = link.getAttribute("href") === `#${id}`;
@@ -166,8 +213,8 @@
     const visibleProjects = projects.filter((p) => !p.hidden);
     if (visibleProjects.length === 0) return;
 
-    // If scrolled to the very bottom of the page, highlight the last visible project
-    const scrolledToBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40;
+    const scrolledToBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40;
     if (scrolledToBottom) {
       setActiveNav(visibleProjects[visibleProjects.length - 1].id);
       return;
@@ -192,44 +239,45 @@
   };
 
   let scrollTicking = false;
-  window.addEventListener("scroll", () => {
-    if (!scrollTicking) {
-      window.requestAnimationFrame(() => {
-        updateActiveOnScroll();
-        scrollTicking = false;
-      });
-      scrollTicking = true;
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          updateActiveOnScroll();
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    },
+    { passive: true }
+  );
 
-  // Also highlight immediately when clicking or hovering a card
   projects.forEach((project) => {
     project.addEventListener("mouseenter", () => setActiveNav(project.id));
   });
 
   updateActiveOnScroll();
 
-  // 5. Persistent Light / Dark Theme Engine & Keyboard Shortcuts
-  const root = document.documentElement;
-  const themeToggle = document.getElementById("theme-toggle");
-  const storedTheme = localStorage.getItem("ay_portfolio_theme");
-  const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
+  // ---------- 5. Theme + keyboard shortcuts ----------
   const setTheme = (theme) => {
     root.setAttribute("data-theme", theme);
-    localStorage.setItem("ay_portfolio_theme", theme);
+    storage.set("ay_portfolio_theme", theme);
     const icon = themeToggle?.querySelector(".theme-icon");
-    if (icon) icon.textContent = theme === "dark" ? "☾" : "☀";
+    if (icon) icon.textContent = theme === "dark" ? "\u263E" : "\u2600";
   };
 
-  setTheme(storedTheme || (systemDark ? "dark" : "light"));
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  setTheme(storage.get("ay_portfolio_theme") || (systemDark ? "dark" : "light"));
 
-  themeToggle?.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    setTheme(current);
-  });
+  const toggleTheme = () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    setTheme(next);
+    return next;
+  };
 
-  // Keyboard shortcuts: '/' focuses search, 't' toggles theme
+  themeToggle?.addEventListener("click", toggleTheme);
+
   document.addEventListener("keydown", (e) => {
     const tag = document.activeElement?.tagName;
     const isTyping = tag === "INPUT" || tag === "TEXTAREA";
@@ -238,11 +286,10 @@
       e.preventDefault();
       searchInput?.focus();
     } else if ((e.key === "t" || e.key === "T") && !isTyping) {
-      const current = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      setTheme(current);
-      showToast(`Switched to ${current} theme`);
-    } else if (e.key === "Escape" && isTyping) {
-      searchInput?.blur();
+      showToast(`Switched to ${toggleTheme()} theme`);
+    } else if (e.key === "Escape") {
+      if (isTyping) searchInput?.blur();
+      lockAllFrames();
     }
   });
 })();
