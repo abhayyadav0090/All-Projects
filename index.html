@@ -1,203 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhay Yadav | Projects</title>
-  <meta name="description" content="Web apps and practice projects by Abhay Yadav, with live previews.">
+  <title>Abhay Yadav | Engineering Projects & Live Sandbox</title>
+  <meta name="description" content="Full-stack applications, the NexOS productivity workspace, the Kartik Vow Tracker, and live interactive frontend projects engineered by Abhay Yadav.">
+  <meta name="theme-color" content="#eef1ee">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-<div class="page">
+  <a class="skip-link" href="#projects-main">Skip to projects</a>
 
-  <!-- Left side: who I am + jump list. Stays in view on wide screens. -->
-  <aside class="side">
-    <div class="side-inner">
-      <h1>Abhay Yadav</h1>
-      <p class="intro">B.Tech IT student building full-stack web apps with the MERN stack. Every preview here is a live site.</p>
+  <div class="page">
+    <aside class="side">
+      <div class="side-inner">
+        <div class="side-top">
+          <span class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            B.Tech IT &bull; Full-Stack Dev
+          </span>
+          <button type="button" class="theme-toggle" id="theme-toggle"
+            aria-label="Toggle color theme"
+            title="Toggle Light/Dark Theme (Shortcut: T)">
+            <span class="theme-icon" aria-hidden="true">&#9728;</span>
+            <span class="theme-label">Theme</span>
+          </button>
+        </div>
 
-      <nav class="index" aria-label="Projects">
-        <ul>
-          <li><a href="#jan-samadhan">Jan Samadhan</a></li>
-          <li><a href="#simple-portfolio">Simple Portfolio</a></li>
-          <li><a href="#mern-practice">MERN Practice</a></li>
-          <li><a href="#nexos">NexOS</a></li>
-          <li><a href="#daily-routine">Daily Routine</a></li>
-          <li><a href="#nutri-flex">Nutri-Flex</a></li>
-          <li><a href="#aurora">Aurora</a></li>
-          <li><a href="#amulspray">AmulSpray</a></li>
-        </ul>
-      </nav>
+        <h1>Abhay Yadav</h1>
+        <p class="intro">
+          Engineering full-stack MERN applications and responsive web interfaces. Featuring high-resolution snapshots and interactive live sandboxes.
+        </p>
 
-      <p class="elsewhere">
-        <a href="https://github.com/abhayyadav0090" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener">Portfolio</a>
-        <a href="https://www.linkedin.com/in/abhay-yadav-6923742b5/" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
-    </div>
-  </aside>
+        <div class="metrics" aria-label="Portfolio metrics">
+          <div class="metric">
+            <span class="metric-val" id="visible-count">9</span>
+            <span class="metric-key">Active Builds</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">6</span>
+            <span class="metric-key">Live Sandboxes</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">SIH '26</span>
+            <span class="metric-key">Featured</span>
+          </div>
+        </div>
 
-  <!-- Right side: the projects -->
-  <main class="projects">
+        <nav class="index" aria-label="Project directory">
+          <div class="index-header">
+            <span>Directory</span>
+            <span class="index-hint">Scroll / Click</span>
+          </div>
+          <ul id="nav-list">
+            <li><a href="#jan-samadhan" data-target="jan-samadhan"><span class="nav-num">01</span>Jan Samadhan</a></li>
+            <li><a href="#nexos" data-target="nexos"><span class="nav-num">02</span>NexOS</a></li>
+            <li><a href="#kartik" data-target="kartik"><span class="nav-num">03</span>Kartik Vow Tracker</a></li>
+            <li><a href="#simple-portfolio" data-target="simple-portfolio"><span class="nav-num">04</span>Simple Portfolio</a></li>
+            <li><a href="#mern-practice" data-target="mern-practice"><span class="nav-num">05</span>MERN Practice</a></li>
+            <li><a href="#daily-routine" data-target="daily-routine"><span class="nav-num">06</span>Daily Routine</a></li>
+            <li><a href="#nutri-flex" data-target="nutri-flex"><span class="nav-num">07</span>Nutri-Flex</a></li>
+            <li><a href="#aurora" data-target="aurora"><span class="nav-num">08</span>Aurora</a></li>
+            <li><a href="#amulspray" data-target="amulspray"><span class="nav-num">09</span>AmulSpray</a></li>
+          </ul>
+        </nav>
 
-    <!-- Jan Samadhan (main project, shown wide; preview is a screenshot) -->
-    <article class="project featured" id="jan-samadhan">
-      <a class="preview" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener" aria-label="Open Jan Samadhan">
-        <span class="address">jana-samadhan.vercel.app</span>
-        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/janasamadhan.png" alt="Jan Samadhan preview" loading="lazy"></span>
-      </a>
-      <div class="info">
-        <h2>Jan Samadhan</h2>
-        <p>A community platform where citizens report local issues, with AI assistance using the Gemini API. Built for Smart India Hackathon 2026.</p>
-        <p class="stack">React, Node.js, Express, MongoDB, Tailwind CSS</p>
-        <div class="links">
-          <a class="open" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener">Open live</a>
+        <div class="elsewhere">
+          <a href="https://github.com/abhayyadav0090" target="_blank" rel="noopener">GitHub &#8599;</a>
+          <a href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener">Portfolio &#8599;</a>
+          <a href="https://www.linkedin.com/in/abhay-yadav-6923742b5/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
         </div>
       </div>
-    </article>
+    </aside>
 
-    <!-- NexOS (screenshot) -->
-    <article class="project" id="nexos">
-      <a class="preview" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener" aria-label="Open NexOS">
-        <span class="address">ai-aqit.onrender.com</span>
-        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/NexOS.png" alt="NexOS preview" loading="lazy"></span>
-      </a>
-      <div class="info">
-        <h2>NexOS</h2>
-        <p>All-in-one productivity workspace with a Kanban task board, focus timer, habit tracker, notes and analytics. Includes an AI coach, a Plan My Day feature (local and AI), Ctrl+K search, JSON backup and restore, due-date notifications and a weekly review.</p>
-        <p class="stack">HTML, CSS, JavaScript, MongoDB, Render, Gemini API, Google Authentication</p>
-        <div class="links">
-          <a class="open" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/AI" target="_blank" rel="noopener">Code</a>
+    <main class="main-col" id="projects-main">
+      <header class="toolbar" aria-label="Filter and search projects">
+        <div class="filter-group" role="tablist" aria-label="Project categories">
+          <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            All <span class="badge-count">9</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">
+            Full-Stack &amp; JS <span class="badge-count">4</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">
+            Frontend UI <span class="badge-count">5</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="sandbox" role="tab" aria-selected="false">
+            Live Iframe <span class="badge-count">6</span>
+          </button>
         </div>
-      </div>
-    </article>
 
-    <!-- NexOS (screenshot) -->
-    <article class="project" id="kartik">
-      <a class="preview" href="https://kartik-maas.onrender.com/" target="_blank" rel="noopener" aria-label="Open kartik-maas">
-        <span class="address">kartik-maas.onrender.com</span>
-        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/kartik-maas.png" alt="kartik-maas preview" loading="lazy"></span>
-      </a>
-      <div class="info">
-        <h2>Kartik Vow Tracker</h2>
-        <p>A 30-day daily-practice tracker. Users choose from 12 default practices or add, edit and remove their own, set per-practice reminders, and track progress with analytics. Has Home, Daily, My Vows and Analysis tabs, and user login.</p>
-        <p class="stack">HTML, CSS, JavaScript, MongoDB, Render, Google Authentication</p>
-        <div class="links">
-          <a class="open" href="https://kartik-maas.onrender.com/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/kartik-maas" target="_blank" rel="noopener">Code</a>
+        <div class="search-wrap">
+          <input type="search" id="project-search" class="search-input"
+            placeholder="Filter by tech or title... (Press /)"
+            aria-label="Filter projects by technology or title"
+            autocomplete="off">
+          <button type="button" id="clear-filter" class="clear-btn" hidden aria-label="Reset filters">
+            Reset
+          </button>
         </div>
-      </div>
-    </article>
+      </header>
 
-    <!-- Simple Portfolio (screenshot) -->
-    <article class="project" id="simple-portfolio">
-      <a class="preview" href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener" aria-label="Open Simple Portfolio">
-        <span class="address">abhayyadav0090.github.io/portfolio2</span>
-        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/portfolio2.png" alt="Simple Portfolio preview" loading="lazy"></span>
-      </a>
-      <div class="info">
-        <h2>Simple Portfolio</h2>
-        <p>A clean personal portfolio with my skills, education and featured projects.</p>
-        <p class="stack">HTML, CSS</p>
-        <div class="links">
-          <a class="open" href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/portfolio2" target="_blank" rel="noopener">Code</a>
-        </div>
+      <div id="empty-state" class="empty-state" hidden>
+        <p>No projects match your current filter criteria.</p>
+        <button type="button" id="empty-reset" class="btn-secondary">Show all projects</button>
       </div>
-    </article>
 
-    <!-- MERN Practice (screenshot) -->
-    <article class="project" id="mern-practice">
-      <a class="preview" href="https://abhayyadav0090.github.io/MERN-Practice/" target="_blank" rel="noopener" aria-label="Open MERN Practice">
-        <span class="address">abhayyadav0090.github.io/MERN-Practice</span>
-        <span class="screen"><img src="https://abhayyadav0090.github.io/portfolio2/PNGs/mern.png" alt="MERN Practice preview" loading="lazy"></span>
-      </a>
-      <div class="info">
-        <h2>MERN Practice</h2>
-        <p>Class exercises, daily learnings and deployments from my MERN stack course.</p>
-        <p class="stack">HTML, CSS, JavaScript</p>
-        <div class="links">
-          <a class="open" href="https://abhayyadav0090.github.io/MERN-Practice/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/MERN-Practice" target="_blank" rel="noopener">Code</a>
-        </div>
+      <div class="projects" id="projects-grid">
+
+        <!-- 01. Jan Samadhan -->
+        <article class="project featured" id="jan-samadhan"
+          data-category="fullstack sandbox"
+          data-tags="react node.js express mongodb tailwind css gemini ai sih fullstack">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address" title="https://jana-samadhan.vercel.app/">jana-samadhan.vercel.app</span>
+              <div class="bar-actions">
+                <span class="mode-badge badge-featured">SIH 2026 &bull; AI</span>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn copy-url" data-url="https://jana-samadhan.vercel.app/" title="Copy live URL">Copy URL</button>
+              </div>
+            </div>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe src="https://jana-samadhan.vercel.app/" title="Jan Samadhan live preview" loading="lazy" tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener" aria-label="Open Jan Samadhan in new tab"></a>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="info-head">
+              <h2>Jan Samadhan</h2>
+              <span class="project-index">01 / FEATURED</span>
+            </div>
+            <p>A civic-tech grievance redressal platform enabling citizens to report, categorize, and track municipal issues with automated AI triage powered by the Gemini API. Engineered for Smart India Hackathon 2026.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="React">React</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Node.js">Node.js</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Express">Express</button></li>
+              <li><button type="button" class="stack-tag" data-tech="MongoDB">MongoDB</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Tailwind CSS">Tailwind CSS</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Gemini API">Gemini API</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener">Open Live App &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090" target="_blank" rel="noopener">GitHub Profile</a>
+            </div>
+          </div>
+        </article>
+                <!-- 02. NexOS -->
+        <article class="project" id="nexos"
+          data-category="fullstack sandbox"
+          data-tags="html css javascript productivity state">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">ai-aqit.onrender.com</span>
+              <div class="bar-actions">
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <span class="mode-badge">Snapshot</span>
+                <button type="button" class="bar-btn copy-url" data-url="https://ai-aqit.onrender.com/">Copy</button>
+              </div>
+            </div>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe src="https://ai-aqit.onrender.com/" title="NexOS live preview" loading="lazy" tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener" aria-label="Open NexOS in new tab"></a>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>NexOS</h2>
+              <span class="project-index">02 / LIVE</span>
+            </div>
+            <p>All-in-one browser workspace integrating task queues, calendar scheduling, Pomodoro focus timers, habit tracking, and persistent notes.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
+              <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
+              <li><button type="button" class="stack-tag" data-tech="JavaScript">JavaScript</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener">Open Live &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/AI" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03. Kartik Vow Tracker -->
+        <article class="project" id="kartik"
+          data-category="fullstack"
+          data-tags="kartik maas vow tracker devotional reminders push notifications node.js express mongodb pwa">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">kartik-maas.onrender.com/kartik</span>
+              <div class="bar-actions">
+                <span class="mode-badge">Live App</span>
+                <button type="button" class="bar-btn copy-url" data-url="https://kartik-maas.onrender.com/kartik" title="Copy live URL">Copy</button>
+              </div>
+            </div>
+            <a class="screen" href="https://kartik-maas.onrender.com/kartik" target="_blank" rel="noopener" aria-label="Open Kartik Vow Tracker">
+              <img src="https://abhayyadav0090.github.io/portfolio2/PNGs/kartik-maas.png" alt="Kartik Vow Tracker preview" loading="lazy">
+            </a>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>Kartik Vow Tracker</h2>
+              <span class="project-index">03 / LIVE</span>
+            </div>
+            <p>A dedicated Kartik Maas devotional tracker for recording daily vows, tracking completion through the 30-day journey, and supporting reminders for incomplete vows.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="Node.js">Node.js</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Express">Express</button></li>
+              <li><button type="button" class="stack-tag" data-tech="MongoDB">MongoDB</button></li>
+              <li><button type="button" class="stack-tag" data-tech="PWA">PWA</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://kartik-maas.onrender.com/kartik" target="_blank" rel="noopener">Open Live App &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/kartik-maas" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04. Simple Portfolio -->
+        <article class="project" id="simple-portfolio"
+          data-category="frontend"
+          data-tags="html css responsive portfolio">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">abhayyadav0090.github.io/portfolio2</span>
+              <div class="bar-actions">
+                <span class="mode-badge">Snapshot</span>
+                <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/portfolio2/">Copy</button>
+              </div>
+            </div>
+            <a class="screen" href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener" aria-label="Open Simple Portfolio">
+              <img src="https://abhayyadav0090.github.io/portfolio2/PNGs/portfolio2.png" alt="Simple Portfolio preview" loading="lazy">
+            </a>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>Simple Portfolio</h2>
+              <span class="project-index">04</span>
+            </div>
+            <p>Personal developer portfolio presenting technical competencies, academic background, and curated engineering builds.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
+              <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://abhayyadav0090.github.io/portfolio2/" target="_blank" rel="noopener">Open Live &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/portfolio2" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05. MERN Practice -->
+        <article class="project" id="mern-practice"
+          data-category="fullstack"
+          data-tags="html css javascript mern dom">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">abhayyadav0090.github.io/MERN-Practice</span>
+              <div class="bar-actions">
+                <span class="mode-badge">Snapshot</span>
+                <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/MERN-Practice/">Copy</button>
+              </div>
+            </div>
+            <a class="screen" href="https://abhayyadav0090.github.io/MERN-Practice/" target="_blank" rel="noopener" aria-label="Open MERN Practice">
+              <img src="https://abhayyadav0090.github.io/portfolio2/PNGs/mern.png" alt="MERN Practice repository hub preview" loading="lazy">
+            </a>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>MERN Practice</h2>
+              <span class="project-index">05</span>
+            </div>
+            <p>Structured repository of full-stack coursework, DOM manipulation labs, and progressive web deployments.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
+              <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
+              <li><button type="button" class="stack-tag" data-tech="JavaScript">JavaScript</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://abhayyadav0090.github.io/MERN-Practice/" target="_blank" rel="noopener">Open Live &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/MERN-Practice" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+                <!-- 06. Daily Routine -->
+        <article class="project" id="daily-routine"
+          data-category="frontend sandbox"
+          data-tags="html css timeline schedule">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">abhayyadav0090.github.io/daily-routine-webpage</span>
+              <div class="bar-actions">
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/daily-routine-webpage/">Copy</button>
+              </div>
+            </div>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe src="https://abhayyadav0090.github.io/daily-routine-webpage/" title="Daily Routine Webpage live preview" loading="lazy" tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://abhayyadav0090.github.io/daily-routine-webpage/" target="_blank" rel="noopener" aria-label="Open Daily Routine Webpage in new tab"></a>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>Daily Routine Webpage</h2>
+              <span class="project-index">06 / LIVE</span>
+            </div>
+            <p>Chronological daily schedule interface utilizing color-coded time blocks and responsive layout grids built during the LetsUpgrade bootcamp.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
+              <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://abhayyadav0090.github.io/daily-routine-webpage/" target="_blank" rel="noopener">Open Live &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/daily-routine-webpage" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 07. Nutri-Flex -->
+        <article class="project" id="nutri-flex"
+          data-category="frontend sandbox"
+          data-tags="html css nutrition health">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">abhayyadav0090.github.io/Nutri-Flex</span>
+              <div class="bar-actions">
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/Nutri-Flex/">Copy</button>
+              </div>
+            </div>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe src="https://abhayyadav0090.github.io/Nutri-Flex/" title="Nutri-Flex live preview" loading="lazy" tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://abhayyadav0090.github.io/Nutri-Flex/" target="_blank" rel="noopener" aria-label="Open Nutri-Flex in new tab"></a>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>Nutri-Flex</h2>
+              <span class="project-index">07 / LIVE</span>
+            </div>
+            <p>Mobile-first nutrition and dietary guide structured for clear macro-nutrient readability and clean visual hierarchy.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
+              <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://abhayyadav0090.github.io/Nutri-Flex/" target="_blank" rel="noopener">Open Live &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/Nutri-Flex" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 08. Aurora -->
+        <article class="project" id="aurora"
+          data-category="frontend sandbox"
+          data-tags="html css landing page ui">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">abhayyadav0090.github.io/Aurora</span>
+              <div class="bar-actions">
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/Aurora/">Copy</button>
+              </div>
+            </div>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe src="https://abhayyadav0090.github.io/Aurora/" title="Aurora live preview" loading="lazy" tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://abhayyadav0090.github.io/Aurora/" target="_blank" rel="noopener" aria-label="Open Aurora in new tab"></a>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>Aurora</h2>
+              <span class="project-index">08 / LIVE</span>
+            </div>
+            <p>Visual front-end landing showcase focused on atmospheric typography, hero composition, and modern CSS layout mechanics.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
+              <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://abhayyadav0090.github.io/Aurora/" target="_blank" rel="noopener">Open Live &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/Aurora" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 09. AmulSpray -->
+        <article class="project" id="amulspray"
+          data-category="frontend sandbox"
+          data-tags="html css product branding">
+          <div class="preview">
+            <div class="browser-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="address">abhayyadav0090.github.io/AmulSpray</span>
+              <div class="bar-actions">
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/AmulSpray/">Copy</button>
+              </div>
+            </div>
+            <div class="screen is-loading" data-interactive="false">
+              <iframe src="https://abhayyadav0090.github.io/AmulSpray/" title="AmulSpray live preview" loading="lazy" tabindex="-1"></iframe>
+              <a class="screen-overlay" href="https://abhayyadav0090.github.io/AmulSpray/" target="_blank" rel="noopener" aria-label="Open AmulSpray in new tab"></a>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info-head">
+              <h2>AmulSpray</h2>
+              <span class="project-index">09 / LIVE</span>
+            </div>
+            <p>Product-centric commercial showcase engineered with structured specification sections, brand typography, and responsive cards.</p>
+            <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
+              <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
+            </ul>
+            <div class="links">
+              <a class="open" href="https://abhayyadav0090.github.io/AmulSpray/" target="_blank" rel="noopener">Open Live &#8599;</a>
+              <a class="code-link" href="https://github.com/abhayyadav0090/AmulSpray" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </article>
+
       </div>
-    </article>
+    </main>
+  </div>
 
-    <!-- Daily Routine (live site, scaled down) -->
-    <article class="project" id="daily-routine">
-      <a class="preview" href="https://abhayyadav0090.github.io/daily-routine-webpage/" target="_blank" rel="noopener" aria-label="Open Daily Routine Webpage">
-        <span class="address">abhayyadav0090.github.io/daily-routine-webpage</span>
-        <span class="screen"><iframe src="https://abhayyadav0090.github.io/daily-routine-webpage/" title="Daily Routine Webpage preview" loading="lazy" tabindex="-1"></iframe></span>
-      </a>
-      <div class="info">
-        <h2>Daily Routine Webpage</h2>
-        <p>A timeline-style daily schedule with colour-coded time blocks, built during the LetsUpgrade bootcamp.</p>
-        <p class="stack">HTML, CSS</p>
-        <div class="links">
-          <a class="open" href="https://abhayyadav0090.github.io/daily-routine-webpage/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/daily-routine-webpage" target="_blank" rel="noopener">Code</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Nutri-Flex (live site, scaled down) -->
-    <article class="project" id="nutri-flex">
-      <a class="preview" href="https://abhayyadav0090.github.io/Nutri-Flex/" target="_blank" rel="noopener" aria-label="Open Nutri-Flex">
-        <span class="address">abhayyadav0090.github.io/Nutri-Flex</span>
-        <span class="screen"><iframe src="https://abhayyadav0090.github.io/Nutri-Flex/" title="Nutri-Flex preview" loading="lazy" tabindex="-1"></iframe></span>
-      </a>
-      <div class="info">
-        <h2>Nutri-Flex</h2>
-        <p>A mobile-friendly nutrition website that presents health and food information clearly.</p>
-        <p class="stack">HTML, CSS</p>
-        <div class="links">
-          <a class="open" href="https://abhayyadav0090.github.io/Nutri-Flex/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/Nutri-Flex" target="_blank" rel="noopener">Code</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Aurora (live site, scaled down) -->
-    <article class="project" id="aurora">
-      <a class="preview" href="https://abhayyadav0090.github.io/Aurora/" target="_blank" rel="noopener" aria-label="Open Aurora">
-        <span class="address">abhayyadav0090.github.io/Aurora</span>
-        <span class="screen"><iframe src="https://abhayyadav0090.github.io/Aurora/" title="Aurora preview" loading="lazy" tabindex="-1"></iframe></span>
-      </a>
-      <div class="info">
-        <h2>Aurora</h2>
-        <!-- TODO: replace this line with what Aurora actually is -->
-        <p>A front-end web project.</p>
-        <p class="stack">HTML, CSS</p>
-        <div class="links">
-          <a class="open" href="https://abhayyadav0090.github.io/Aurora/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/Aurora" target="_blank" rel="noopener">Code</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- AmulSpray (live site, scaled down) -->
-    <article class="project" id="amulspray">
-      <a class="preview" href="https://abhayyadav0090.github.io/AmulSpray/" target="_blank" rel="noopener" aria-label="Open AmulSpray">
-        <span class="address">abhayyadav0090.github.io/AmulSpray</span>
-        <span class="screen"><iframe src="https://abhayyadav0090.github.io/AmulSpray/" title="AmulSpray preview" loading="lazy" tabindex="-1"></iframe></span>
-      </a>
-      <div class="info">
-        <h2>AmulSpray</h2>
-        <p>A product-focused webpage with a clean layout and well-structured content.</p>
-        <p class="stack">HTML, CSS</p>
-        <div class="links">
-          <a class="open" href="https://abhayyadav0090.github.io/AmulSpray/" target="_blank" rel="noopener">Open live</a>
-          <a href="https://github.com/abhayyadav0090/AmulSpray" target="_blank" rel="noopener">Code</a>
-        </div>
-      </div>
-    </article>
-
-  </main>
-</div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>
