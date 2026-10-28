@@ -4,7 +4,7 @@ A single page that shows everything I have built, each with a live preview you c
 
 **Live site:** https://abhayyadav0090.github.io/All-Projects/
 
-![All Projects preview](https://github.com/abhayyadav0090/portfolio2/PNGs/all-projects.png)
+![All Projects preview](https://raw.githubusercontent.com/abhayyadav0090/portfolio2/main/PNGs/all-projects.png)
 
 Built by [Abhay Yadav](https://github.com/abhayyadav0090), B.Tech IT student at Rajkiya Engineering College, Bijnor.
 
