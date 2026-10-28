@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abhay Yadav | Engineering Projects & Live Sandbox</title>
-  <meta name="description" content="Full-stack applications, the NexOS productivity workspace, the Kartik Vow Tracker, and live interactive frontend projects engineered by Abhay Yadav.">
+  <meta name="description" content="Full-stack MERN applications, productivity tools, and live interactive frontend projects engineered by Abhay Yadav.">
   <meta name="theme-color" content="#eef1ee">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
   <a class="skip-link" href="#projects-main">Skip to projects</a>
 
   <div class="page">
+    <!-- Left Sidebar: Identity, Controls, Scroll-Spy Index -->
     <aside class="side">
       <div class="side-inner">
         <div class="side-top">
@@ -25,7 +26,10 @@
             <span class="status-dot" aria-hidden="true"></span>
             B.Tech IT &bull; Full-Stack Dev
           </span>
-          <button type="button" class="theme-toggle" id="theme-toggle"
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
             aria-label="Toggle color theme"
             title="Toggle Light/Dark Theme (Shortcut: T)">
             <span class="theme-icon" aria-hidden="true">&#9728;</span>
@@ -38,13 +42,14 @@
           Engineering full-stack MERN applications and responsive web interfaces. Featuring high-resolution snapshots and interactive live sandboxes.
         </p>
 
+        <!-- Stats Summary -->
         <div class="metrics" aria-label="Portfolio metrics">
           <div class="metric">
             <span class="metric-val" id="visible-count">9</span>
             <span class="metric-key">Active Builds</span>
           </div>
           <div class="metric">
-            <span class="metric-val">6</span>
+            <span class="metric-val">5</span>
             <span class="metric-key">Live Sandboxes</span>
           </div>
           <div class="metric">
@@ -53,6 +58,7 @@
           </div>
         </div>
 
+        <!-- Jump Index (Sticky on Desktop, Horizontal Bar on Mobile) -->
         <nav class="index" aria-label="Project directory">
           <div class="index-header">
             <span>Directory</span>
@@ -61,7 +67,7 @@
           <ul id="nav-list">
             <li><a href="#jan-samadhan" data-target="jan-samadhan"><span class="nav-num">01</span>Jan Samadhan</a></li>
             <li><a href="#nexos" data-target="nexos"><span class="nav-num">02</span>NexOS</a></li>
-            <li><a href="#kartik" data-target="kartik"><span class="nav-num">03</span>Kartik Vow Tracker</a></li>
+            <li><a href="#damodar-vows" data-target="damodar-vows"><span class="nav-num">03</span>Damodar Vows</a></li>
             <li><a href="#simple-portfolio" data-target="simple-portfolio"><span class="nav-num">04</span>Simple Portfolio</a></li>
             <li><a href="#mern-practice" data-target="mern-practice"><span class="nav-num">05</span>MERN Practice</a></li>
             <li><a href="#daily-routine" data-target="daily-routine"><span class="nav-num">06</span>Daily Routine</a></li>
@@ -79,7 +85,9 @@
       </div>
     </aside>
 
+    <!-- Right Content: Toolbar + Projects Grid -->
     <main class="main-col" id="projects-main">
+      <!-- Interactive Filter & Search Toolbar -->
       <header class="toolbar" aria-label="Filter and search projects">
         <div class="filter-group" role="tablist" aria-label="Project categories">
           <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
@@ -92,12 +100,15 @@
             Frontend UI <span class="badge-count">5</span>
           </button>
           <button type="button" class="filter-btn" data-filter="sandbox" role="tab" aria-selected="false">
-            Live Iframe <span class="badge-count">6</span>
+            Live Iframe <span class="badge-count">5</span>
           </button>
         </div>
 
         <div class="search-wrap">
-          <input type="search" id="project-search" class="search-input"
+          <input
+            type="search"
+            id="project-search"
+            class="search-input"
             placeholder="Filter by tech or title... (Press /)"
             aria-label="Filter projects by technology or title"
             autocomplete="off">
@@ -107,29 +118,43 @@
         </div>
       </header>
 
+      <!-- Empty State for Search -->
       <div id="empty-state" class="empty-state" hidden>
         <p>No projects match your current filter criteria.</p>
         <button type="button" id="empty-reset" class="btn-secondary">Show all projects</button>
       </div>
 
+      <!-- Projects Grid -->
       <div class="projects" id="projects-grid">
 
-        <!-- 01. Jan Samadhan -->
-        <article class="project featured" id="jan-samadhan"
+        <!-- 01. Jan Samadhan (Featured Full-Stack Project) -->
+        <article
+          class="project featured"
+          id="jan-samadhan"
           data-category="fullstack sandbox"
           data-tags="react node.js express mongodb tailwind css gemini ai sih fullstack">
           <div class="preview">
             <div class="browser-bar">
-              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="window-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
               <span class="address" title="https://jana-samadhan.vercel.app/">jana-samadhan.vercel.app</span>
               <div class="bar-actions">
                 <span class="mode-badge badge-featured">SIH 2026 &bull; AI</span>
-                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
-                <button type="button" class="bar-btn copy-url" data-url="https://jana-samadhan.vercel.app/" title="Copy live URL">Copy URL</button>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">
+                  Interact
+                </button>
+                <button type="button" class="bar-btn copy-url" data-url="https://jana-samadhan.vercel.app/" title="Copy live URL">
+                  Copy URL
+                </button>
               </div>
             </div>
             <div class="screen is-loading" data-interactive="false">
-              <iframe src="https://jana-samadhan.vercel.app/" title="Jan Samadhan live preview" loading="lazy" tabindex="-1"></iframe>
+              <iframe
+                src="https://jana-samadhan.vercel.app/"
+                title="Jan Samadhan live preview"
+                loading="lazy"
+                tabindex="-1"></iframe>
               <a class="screen-overlay" href="https://jana-samadhan.vercel.app/" target="_blank" rel="noopener" aria-label="Open Jan Samadhan in new tab"></a>
             </div>
           </div>
@@ -139,7 +164,9 @@
               <h2>Jan Samadhan</h2>
               <span class="project-index">01 / FEATURED</span>
             </div>
-            <p>A civic-tech grievance redressal platform enabling citizens to report, categorize, and track municipal issues with automated AI triage powered by the Gemini API. Engineered for Smart India Hackathon 2026.</p>
+            <p>
+              A civic-tech grievance redressal platform enabling citizens to report, categorize, and track municipal issues with automated AI triage powered by the Gemini API. Engineered for Smart India Hackathon 2026.
+            </p>
             <ul class="stack-list" aria-label="Technologies used">
               <li><button type="button" class="stack-tag" data-tech="React">React</button></li>
               <li><button type="button" class="stack-tag" data-tech="Node.js">Node.js</button></li>
@@ -154,35 +181,40 @@
             </div>
           </div>
         </article>
-                <!-- 02. NexOS -->
-        <article class="project" id="nexos"
-          data-category="fullstack sandbox"
-          data-tags="html css javascript productivity state">
+
+        <!-- 02. NexOS -->
+        <article
+          class="project"
+          id="nexos"
+          data-category="fullstack"
+          data-tags="html css javascript node express mongodb gemini productivity auth">
           <div class="preview">
             <div class="browser-bar">
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <span class="address">ai-aqit.onrender.com</span>
               <div class="bar-actions">
-                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
                 <span class="mode-badge">Snapshot</span>
                 <button type="button" class="bar-btn copy-url" data-url="https://ai-aqit.onrender.com/">Copy</button>
               </div>
             </div>
-            <div class="screen is-loading" data-interactive="false">
-              <iframe src="https://ai-aqit.onrender.com/" title="NexOS live preview" loading="lazy" tabindex="-1"></iframe>
-              <a class="screen-overlay" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener" aria-label="Open NexOS in new tab"></a>
-            </div>
+            <a class="screen" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener" aria-label="Open NexOS">
+              <img src="https://abhayyadav0090.github.io/portfolio2/PNGs/NexOS.png" alt="NexOS productivity workspace preview" loading="lazy">
+            </a>
           </div>
           <div class="info">
             <div class="info-head">
               <h2>NexOS</h2>
-              <span class="project-index">02 / LIVE</span>
+              <span class="project-index">02</span>
             </div>
-            <p>All-in-one browser workspace integrating task queues, calendar scheduling, Pomodoro focus timers, habit tracking, and persistent notes.</p>
+            <p>Full-stack productivity workspace with a Kanban board, focus timer, habit tracker, notes and analytics, plus NexAI, a Gemini-powered assistant. Google sign-in, with each user's data saved in MongoDB.</p>
             <ul class="stack-list" aria-label="Technologies used">
               <li><button type="button" class="stack-tag" data-tech="HTML">HTML</button></li>
               <li><button type="button" class="stack-tag" data-tech="CSS">CSS</button></li>
               <li><button type="button" class="stack-tag" data-tech="JavaScript">JavaScript</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Node.js">Node.js</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Express">Express</button></li>
+              <li><button type="button" class="stack-tag" data-tech="MongoDB">MongoDB</button></li>
+              <li><button type="button" class="stack-tag" data-tech="Gemini API">Gemini API</button></li>
             </ul>
             <div class="links">
               <a class="open" href="https://ai-aqit.onrender.com/" target="_blank" rel="noopener">Open Live &#8599;</a>
@@ -191,44 +223,47 @@
           </div>
         </article>
 
-        <!-- 03. Kartik Vow Tracker -->
-        <article class="project" id="kartik"
+        <!-- 03. Damodar Vows / Kartik Sadhana Tracker (Snapshot) -->
+        <article
+          class="project"
+          id="damodar-vows"
           data-category="fullstack"
-          data-tags="kartik maas vow tracker devotional reminders push notifications node.js express mongodb pwa">
+          data-tags="html css javascript node express mongodb google login tracker reminders analytics">
           <div class="preview">
             <div class="browser-bar">
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-              <span class="address">kartik-maas.onrender.com/kartik</span>
+              <span class="address">kartik-maas.onrender.com</span>
               <div class="bar-actions">
-                <span class="mode-badge">Live App</span>
-                <button type="button" class="bar-btn copy-url" data-url="https://kartik-maas.onrender.com/kartik" title="Copy live URL">Copy</button>
+                <span class="mode-badge">Snapshot</span>
+                <button type="button" class="bar-btn copy-url" data-url="https://kartik-maas.onrender.com/">Copy</button>
               </div>
             </div>
-            <a class="screen" href="https://kartik-maas.onrender.com/kartik" target="_blank" rel="noopener" aria-label="Open Kartik Vow Tracker">
-              <img src="https://abhayyadav0090.github.io/portfolio2/PNGs/kartik-maas.png" alt="Kartik Vow Tracker preview" loading="lazy">
+            <a class="screen" href="https://kartik-maas.onrender.com/" target="_blank" rel="noopener" aria-label="Open Damodar Vows">
+              <img src="https://abhayyadav0090.github.io/portfolio2/PNGs/kartik-maas.png" alt="Damodar Vows Kartik Sadhana Tracker preview" loading="lazy">
             </a>
           </div>
           <div class="info">
             <div class="info-head">
-              <h2>Kartik Vow Tracker</h2>
-              <span class="project-index">03 / LIVE</span>
+              <h2>Damodar Vows</h2>
+              <span class="project-index">03</span>
             </div>
-            <p>A dedicated Kartik Maas devotional tracker for recording daily vows, tracking completion through the 30-day journey, and supporting reminders for incomplete vows.</p>
+            <p>A 30-day Kartik Sadhana tracker for daily vows, japa rounds and reflection. Google sign-in, a customisable vow list with per-vow reminders, a 30-day journey view and progress analytics.</p>
             <ul class="stack-list" aria-label="Technologies used">
+              <li><button type="button" class="stack-tag" data-tech="JavaScript">JavaScript</button></li>
               <li><button type="button" class="stack-tag" data-tech="Node.js">Node.js</button></li>
               <li><button type="button" class="stack-tag" data-tech="Express">Express</button></li>
               <li><button type="button" class="stack-tag" data-tech="MongoDB">MongoDB</button></li>
-              <li><button type="button" class="stack-tag" data-tech="PWA">PWA</button></li>
             </ul>
             <div class="links">
-              <a class="open" href="https://kartik-maas.onrender.com/kartik" target="_blank" rel="noopener">Open Live App &#8599;</a>
-              <a class="code-link" href="https://github.com/abhayyadav0090/kartik-maas" target="_blank" rel="noopener">Source Code</a>
+              <a class="open" href="https://kartik-maas.onrender.com/" target="_blank" rel="noopener">Open Live &#8599;</a>
             </div>
           </div>
         </article>
 
         <!-- 04. Simple Portfolio -->
-        <article class="project" id="simple-portfolio"
+        <article
+          class="project"
+          id="simple-portfolio"
           data-category="frontend"
           data-tags="html css responsive portfolio">
           <div class="preview">
@@ -262,7 +297,9 @@
         </article>
 
         <!-- 05. MERN Practice -->
-        <article class="project" id="mern-practice"
+        <article
+          class="project"
+          id="mern-practice"
           data-category="fullstack"
           data-tags="html css javascript mern dom">
           <div class="preview">
@@ -295,8 +332,11 @@
             </div>
           </div>
         </article>
-                <!-- 06. Daily Routine -->
-        <article class="project" id="daily-routine"
+
+        <!-- 06. Daily Routine (Live Interactive Sandbox) -->
+        <article
+          class="project"
+          id="daily-routine"
           data-category="frontend sandbox"
           data-tags="html css timeline schedule">
           <div class="preview">
@@ -304,12 +344,18 @@
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <span class="address">abhayyadav0090.github.io/daily-routine-webpage</span>
               <div class="bar-actions">
-                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">
+                  Interact
+                </button>
                 <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/daily-routine-webpage/">Copy</button>
               </div>
             </div>
             <div class="screen is-loading" data-interactive="false">
-              <iframe src="https://abhayyadav0090.github.io/daily-routine-webpage/" title="Daily Routine Webpage live preview" loading="lazy" tabindex="-1"></iframe>
+              <iframe
+                src="https://abhayyadav0090.github.io/daily-routine-webpage/"
+                title="Daily Routine Webpage live preview"
+                loading="lazy"
+                tabindex="-1"></iframe>
               <a class="screen-overlay" href="https://abhayyadav0090.github.io/daily-routine-webpage/" target="_blank" rel="noopener" aria-label="Open Daily Routine Webpage in new tab"></a>
             </div>
           </div>
@@ -330,8 +376,10 @@
           </div>
         </article>
 
-        <!-- 07. Nutri-Flex -->
-        <article class="project" id="nutri-flex"
+        <!-- 07. Nutri-Flex (Live Interactive Sandbox) -->
+        <article
+          class="project"
+          id="nutri-flex"
           data-category="frontend sandbox"
           data-tags="html css nutrition health">
           <div class="preview">
@@ -339,12 +387,18 @@
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <span class="address">abhayyadav0090.github.io/Nutri-Flex</span>
               <div class="bar-actions">
-                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">
+                  Interact
+                </button>
                 <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/Nutri-Flex/">Copy</button>
               </div>
             </div>
             <div class="screen is-loading" data-interactive="false">
-              <iframe src="https://abhayyadav0090.github.io/Nutri-Flex/" title="Nutri-Flex live preview" loading="lazy" tabindex="-1"></iframe>
+              <iframe
+                src="https://abhayyadav0090.github.io/Nutri-Flex/"
+                title="Nutri-Flex live preview"
+                loading="lazy"
+                tabindex="-1"></iframe>
               <a class="screen-overlay" href="https://abhayyadav0090.github.io/Nutri-Flex/" target="_blank" rel="noopener" aria-label="Open Nutri-Flex in new tab"></a>
             </div>
           </div>
@@ -365,8 +419,10 @@
           </div>
         </article>
 
-        <!-- 08. Aurora -->
-        <article class="project" id="aurora"
+        <!-- 08. Aurora (Live Interactive Sandbox - Fixed Placeholder Description) -->
+        <article
+          class="project"
+          id="aurora"
           data-category="frontend sandbox"
           data-tags="html css landing page ui">
           <div class="preview">
@@ -374,12 +430,18 @@
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <span class="address">abhayyadav0090.github.io/Aurora</span>
               <div class="bar-actions">
-                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">
+                  Interact
+                </button>
                 <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/Aurora/">Copy</button>
               </div>
             </div>
             <div class="screen is-loading" data-interactive="false">
-              <iframe src="https://abhayyadav0090.github.io/Aurora/" title="Aurora live preview" loading="lazy" tabindex="-1"></iframe>
+              <iframe
+                src="https://abhayyadav0090.github.io/Aurora/"
+                title="Aurora live preview"
+                loading="lazy"
+                tabindex="-1"></iframe>
               <a class="screen-overlay" href="https://abhayyadav0090.github.io/Aurora/" target="_blank" rel="noopener" aria-label="Open Aurora in new tab"></a>
             </div>
           </div>
@@ -400,8 +462,10 @@
           </div>
         </article>
 
-        <!-- 09. AmulSpray -->
-        <article class="project" id="amulspray"
+        <!-- 09. AmulSpray (Live Interactive Sandbox) -->
+        <article
+          class="project"
+          id="amulspray"
           data-category="frontend sandbox"
           data-tags="html css product branding">
           <div class="preview">
@@ -409,12 +473,18 @@
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <span class="address">abhayyadav0090.github.io/AmulSpray</span>
               <div class="bar-actions">
-                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">Interact</button>
+                <button type="button" class="bar-btn interact-toggle" aria-pressed="false" title="Unlock interactive iframe preview">
+                  Interact
+                </button>
                 <button type="button" class="bar-btn copy-url" data-url="https://abhayyadav0090.github.io/AmulSpray/">Copy</button>
               </div>
             </div>
             <div class="screen is-loading" data-interactive="false">
-              <iframe src="https://abhayyadav0090.github.io/AmulSpray/" title="AmulSpray live preview" loading="lazy" tabindex="-1"></iframe>
+              <iframe
+                src="https://abhayyadav0090.github.io/AmulSpray/"
+                title="AmulSpray live preview"
+                loading="lazy"
+                tabindex="-1"></iframe>
               <a class="screen-overlay" href="https://abhayyadav0090.github.io/AmulSpray/" target="_blank" rel="noopener" aria-label="Open AmulSpray in new tab"></a>
             </div>
           </div>
@@ -439,6 +509,7 @@
     </main>
   </div>
 
+  <!-- Toast Notification for Clipboard Actions -->
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>
