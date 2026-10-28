@@ -19,16 +19,17 @@ Built by [Abhay Yadav](https://github.com/abhayyadav0090), B.Tech IT student at 
 | 3 | **Damodar Vows** | 30-day Kartik Sadhana tracker for daily vows, japa rounds and reflection, with Google sign-in, per-vow reminders and progress analytics. | JavaScript, Node.js, Express, MongoDB | [Open](https://kartik-maas.onrender.com/) | [kartik-maas](https://github.com/abhayyadav0090/kartik-maas) |
 | 4 | **Simple Portfolio** | Personal developer portfolio with skills, education and selected builds. | HTML, CSS | [Open](https://abhayyadav0090.github.io/portfolio2/) | [portfolio2](https://github.com/abhayyadav0090/portfolio2) |
 | 5 | **MERN Practice** | Full-stack coursework, DOM labs and deployments from my MERN course. | HTML, CSS, JavaScript | [Open](https://abhayyadav0090.github.io/MERN-Practice/) | [MERN-Practice](https://github.com/abhayyadav0090/MERN-Practice) |
-| 6 | **Daily Routine** | Daily schedule page with colour-coded time blocks, built during the LetsUpgrade bootcamp. | HTML, CSS | [Open](https://abhayyadav0090.github.io/daily-routine-webpage/) | [daily-routine-webpage](https://github.com/abhayyadav0090/daily-routine-webpage) |
-| 7 | **Nutri-Flex** | Mobile-first nutrition guide with clear macro-nutrient layout. | HTML, CSS | [Open](https://abhayyadav0090.github.io/Nutri-Flex/) | [Nutri-Flex](https://github.com/abhayyadav0090/Nutri-Flex) |
-| 8 | **Aurora** | Landing page focused on typography, hero layout and modern CSS. | HTML, CSS | [Open](https://abhayyadav0090.github.io/Aurora/) | [Aurora](https://github.com/abhayyadav0090/Aurora) |
-| 9 | **AmulSpray** | Product showcase page with specification sections and responsive cards. | HTML, CSS | [Open](https://abhayyadav0090.github.io/AmulSpray/) | [AmulSpray](https://github.com/abhayyadav0090/AmulSpray) |
+| 6 | **Codes** | Working log of my DSA practice: CodeForces, CodeChef, AtCoder, HackerRank and Strivers solutions, plus data-structures and C coursework. Over 350 source files. | C++, C | [Open](https://abhayyadav0090.github.io/Codes/) | [Codes](https://github.com/abhayyadav0090/Codes) |
+| 7 | **Daily Routine** | Daily schedule page with colour-coded time blocks, built during the LetsUpgrade bootcamp. | HTML, CSS | [Open](https://abhayyadav0090.github.io/daily-routine-webpage/) | [daily-routine-webpage](https://github.com/abhayyadav0090/daily-routine-webpage) |
+| 8 | **Nutri-Flex** | Mobile-first nutrition guide with clear macro-nutrient layout. | HTML, CSS | [Open](https://abhayyadav0090.github.io/Nutri-Flex/) | [Nutri-Flex](https://github.com/abhayyadav0090/Nutri-Flex) |
+| 9 | **Aurora** | Landing page focused on typography, hero layout and modern CSS. | HTML, CSS | [Open](https://abhayyadav0090.github.io/Aurora/) | [Aurora](https://github.com/abhayyadav0090/Aurora) |
+| 10 | **AmulSpray** | Product showcase page with specification sections and responsive cards. | HTML, CSS | [Open](https://abhayyadav0090.github.io/AmulSpray/) | [AmulSpray](https://github.com/abhayyadav0090/AmulSpray) |
 
 ---
 
 ## Features
 
-- **Two kinds of preview.** Jan Samadhan and the four static sites (Daily Routine, Nutri-Flex, Aurora, AmulSpray) load as live frames, scaled down to fit their card. NexOS, Damodar Vows, Simple Portfolio and MERN Practice use screenshots.
+- **Two kinds of preview.** Jan Samadhan and the five static sites (Codes, Daily Routine, Nutri-Flex, Aurora, AmulSpray) load as live frames, scaled down to fit their card. NexOS, Damodar Vows, Simple Portfolio and MERN Practice use screenshots.
 - **Interact mode.** Live previews start locked so the page scrolls normally. Press **Interact** to unlock one and click inside it. Only one preview is unlocked at a time, and `Esc` locks it again.
 - **Filter and search.** Filter by category (Full-Stack & JS, Frontend UI, Live Iframe) or type a technology or title. Click any stack tag on a card to filter by it.
 - **Directory with scroll-spy.** The left-hand list highlights the project you are looking at, and clicking an entry jumps to it. On phones it becomes a horizontal bar.
