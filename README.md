@@ -16,7 +16,7 @@ Built by [Abhay Yadav](https://github.com/abhayyadav0090), B.Tech IT student at 
 |---|---------|-----------|-------|------|------|
 | 1 | **Jan Samadhan** | Civic-tech platform where citizens report, categorise and track municipal issues, with AI triage by the Gemini API. Built for Smart India Hackathon 2026. | React, Node.js, Express, MongoDB, Tailwind CSS, Gemini API | [Open](https://jana-samadhan.vercel.app/) | Private repo |
 | 2 | **NexOS** | Productivity workspace with a Kanban board, focus timer, habit tracker, notes and analytics, plus NexAI, a Gemini-powered assistant. Google sign-in, data saved per user in MongoDB. | HTML, CSS, JavaScript, Node.js, Express, MongoDB, Gemini API | [Open](https://ai-aqit.onrender.com/) | [AI](https://github.com/abhayyadav0090/AI) |
-| 3 | **Damodar Vows** | 30-day Kartik Sadhana tracker for daily vows, japa rounds and reflection, with Google sign-in, per-vow reminders and progress analytics. | JavaScript, Node.js, Express, MongoDB | [Open](https://kartik-maas.onrender.com/) | [kartik-maas](https://github.com/abhayyadav0090/kartik-maas) |
+| 3 | **Kartik Maas** | 30-day Kartik Sadhana tracker (titled Damodar Vows inside the app) for daily vows, japa rounds and reflection, with Google sign-in, per-vow reminders and progress analytics. | JavaScript, Node.js, Express, MongoDB | [Open](https://kartik-maas.onrender.com/) | [kartik-maas](https://github.com/abhayyadav0090/kartik-maas) |
 | 4 | **Simple Portfolio** | Personal developer portfolio with skills, education and selected builds. | HTML, CSS | [Open](https://abhayyadav0090.github.io/portfolio2/) | [portfolio2](https://github.com/abhayyadav0090/portfolio2) |
 | 5 | **MERN Practice** | Full-stack coursework, DOM labs and deployments from my MERN course. | HTML, CSS, JavaScript | [Open](https://abhayyadav0090.github.io/MERN-Practice/) | [MERN-Practice](https://github.com/abhayyadav0090/MERN-Practice) |
 | 6 | **Codes** | Working log of my DSA practice: CodeForces, CodeChef, AtCoder, HackerRank and Strivers solutions, plus data-structures and C coursework. Over 350 source files. | C++, C | [Open](https://abhayyadav0090.github.io/Codes/) | [Codes](https://github.com/abhayyadav0090/Codes) |
@@ -29,7 +29,7 @@ Built by [Abhay Yadav](https://github.com/abhayyadav0090), B.Tech IT student at 
 
 ## Features
 
-- **Two kinds of preview.** Jan Samadhan and the five static sites (Codes, Daily Routine, Nutri-Flex, Aurora, AmulSpray) load as live frames, scaled down to fit their card. NexOS, Damodar Vows, Simple Portfolio and MERN Practice use screenshots.
+- **Two kinds of preview.** Jan Samadhan and the five static sites (Codes, Daily Routine, Nutri-Flex, Aurora, AmulSpray) load as live frames, scaled down to fit their card. NexOS, Kartik Maas, Simple Portfolio and MERN Practice use screenshots.
 - **Interact mode.** Live previews start locked so the page scrolls normally. Press **Interact** to unlock one and click inside it. Only one preview is unlocked at a time, and `Esc` locks it again.
 - **Filter and search.** Filter by category (Full-Stack & JS, Frontend UI, Live Iframe) or type a technology or title. Click any stack tag on a card to filter by it.
 - **Directory with scroll-spy.** The left-hand list highlights the project you are looking at, and clicking an entry jumps to it. On phones it becomes a horizontal bar.
